@@ -21,11 +21,12 @@ public class Client {
 
         System.out.println(socket.isConnected());
 
+        ClientThread clientThread = new ClientThread(socket, input, bufferedReader);
+
         while (true) {
             clientInput = scanner.nextLine();
             if(clientInput.equals("exit")) break;
             printWriter.println(clientInput);
-            System.out.println(bufferedReader.readLine());
         }
     }
 }

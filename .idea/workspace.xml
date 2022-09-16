@@ -10,11 +10,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb4466e4-0d66-4504-8c97-fabecd6e80e5" name="Changes" comment="Sending message works now, added few informational system outs">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/NoLoginMessenger_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="cb4466e4-0d66-4504-8c97-fabecd6e80e5" name="Changes" comment="Added ClientThread class to get continuous message receiving to work">
       <change beforePath="$PROJECT_DIR$/src/main/java/ovh/fejker/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ovh/fejker/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ovh/fejker/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ovh/fejker/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ovh/fejker/ClientThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ovh/fejker/ClientThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +116,7 @@
       <workItem from="1663326600549" duration="1463000" />
       <workItem from="1663328392138" duration="691000" />
       <workItem from="1663329126675" duration="1654000" />
-      <workItem from="1663331332726" duration="3130000" />
+      <workItem from="1663331332726" duration="3628000" />
     </task>
     <task id="LOCAL-00001" summary="Created client and server classes, made first connection">
       <created>1663320969544</created>
@@ -155,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663333481661</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added ClientThread class to get continuous message receiving to work">
+      <created>1663334916718</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1663334916718</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,6 +183,7 @@
     <MESSAGE value="Added input and output streams" />
     <MESSAGE value="Created ServerThread class and changed connection mode" />
     <MESSAGE value="Sending message works now, added few informational system outs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sending message works now, added few informational system outs" />
+    <MESSAGE value="Added ClientThread class to get continuous message receiving to work" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added ClientThread class to get continuous message receiving to work" />
   </component>
 </project>
