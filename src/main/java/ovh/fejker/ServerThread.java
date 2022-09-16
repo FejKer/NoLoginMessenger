@@ -19,13 +19,16 @@ public class ServerThread extends Thread{
         this.reader = reader;
         this.printWriter = printWriter;
         this.server = server;
+        start();
     }
 
     @Override
     public void run(){
         while(true){
             try {
+                System.out.println("LISTENING FOR CLIENT");
                 String clientMessage = reader.readLine();
+                System.out.println(clientMessage);
                 threadLoop(clientMessage);
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -38,7 +41,8 @@ public class ServerThread extends Thread{
     private void threadLoop(String clientMessage){
         ArrayList<ServerThread> threads = server.getThreads();
         for (ServerThread thread: threads) {
-            this.sendMessage(clientMessage);
+            System.out.println("LOOPING THROUGH THREADS");
+            thread.sendMessage(clientMessage);
         }
     }
 
