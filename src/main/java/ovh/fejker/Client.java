@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class Client {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
+        System.out.println("CLIENT'S STARTING");
         Client c = new Client("localhost", 26000);
     }
 

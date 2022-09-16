@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="NoLoginMessenger:jar" />
+      <artifact name="NoLoginMessenger:jar2" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb4466e4-0d66-4504-8c97-fabecd6e80e5" name="Changes" comment="Created ServerThread class and changed connection mode">
-      <change beforePath="$PROJECT_DIR$/src/main/java/ovh/fejker/ServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ovh/fejker/ServerThread.java" afterDir="false" />
+    <list default="true" id="cb4466e4-0d66-4504-8c97-fabecd6e80e5" name="Changes" comment="Sending message works now, added few informational system outs">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/NoLoginMessenger_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ovh/fejker/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ovh/fejker/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ovh/fejker/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ovh/fejker/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,15 +46,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.Client">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ovh.fejker.App" />
@@ -106,7 +118,7 @@
       <workItem from="1663326600549" duration="1463000" />
       <workItem from="1663328392138" duration="691000" />
       <workItem from="1663329126675" duration="1654000" />
-      <workItem from="1663331332726" duration="1908000" />
+      <workItem from="1663331332726" duration="3130000" />
     </task>
     <task id="LOCAL-00001" summary="Created client and server classes, made first connection">
       <created>1663320969544</created>
@@ -136,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663333158893</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Sending message works now, added few informational system outs">
+      <created>1663333481661</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1663333481661</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,6 +177,7 @@
     <MESSAGE value="Deleted User class" />
     <MESSAGE value="Added input and output streams" />
     <MESSAGE value="Created ServerThread class and changed connection mode" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created ServerThread class and changed connection mode" />
+    <MESSAGE value="Sending message works now, added few informational system outs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sending message works now, added few informational system outs" />
   </component>
 </project>

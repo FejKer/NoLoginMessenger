@@ -13,6 +13,7 @@ public class Server {
     private DataInputStream in;
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
+        System.out.println("SERVER'S STARTING");
         new Server(26000);
     }
 
