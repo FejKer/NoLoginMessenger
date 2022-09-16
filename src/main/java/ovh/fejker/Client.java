@@ -1,24 +1,30 @@
 package ovh.fejker;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.net.Socket;
+import java.util.Scanner;
 
 public class Client {
-    private String serverAddress;
-    private int port;
-    private Socket socket;
-    private ObjectOutputStream output;
-    private ObjectInputStream input;
-
-    public static void main(String[] args) throws IOException {
-        Client c = new Client("localhost", 25000);
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+        Client c = new Client("localhost", 26000);
     }
 
-    public Client(String serverAddress, int port) throws IOException {
-        socket = new Socket(serverAddress, port);
+    private Client(String ip, int port) throws IOException {
+        Socket socket = new Socket(ip, port);
+        OutputStream output = socket.getOutputStream();
+        InputStream input = socket.getInputStream();
+        PrintWriter printWriter = new PrintWriter(output, true);
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(input));
+        Scanner scanner = new Scanner(System.in);
+        String clientInput;
 
+        System.out.println(socket.isConnected());
+
+        while (true) {
+            clientInput = scanner.nextLine();
+            if(clientInput.equals("exit")) break;
+            printWriter.println(clientInput);
+            System.out.println(bufferedReader.readLine());
+        }
     }
-
 }

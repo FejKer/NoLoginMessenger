@@ -1,32 +1,38 @@
 package ovh.fejker;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Server {
     private int port;
     private ServerSocket ss;
-    private List<Client> clients;
-    private ObjectOutputStream output;
-    private ObjectInputStream input;
+    private ArrayList<ServerThread> threads;
+    private DataInputStream in;
 
-    public static void main(String[] args) throws IOException {
-        Server server = new Server();
-        server.start(25000);
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+        new Server(26000);
     }
 
-    public void start(int port) throws IOException {
-        this.port = port;
+    public Server(int port) throws IOException, ClassNotFoundException {
+        threads = new ArrayList<ServerThread>();
         ss = new ServerSocket(port);
-        System.out.println("Server started on port " + port);
-        while (true) {
-            Socket s = ss.accept();
-            System.out.println("Client connected: " + s.getInetAddress() + ":" + s.getPort());
+        while (true){
+            Socket socket = ss.accept();
+            System.out.println(socket.isConnected());
+            InputStream input = socket.getInputStream();
+            OutputStream output = socket.getOutputStream();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+            PrintWriter printWriter = new PrintWriter(output, true);
 
+            ServerThread serverThread = new ServerThread(socket, input, output, reader, printWriter, this);
+            threads.add(serverThread);
         }
+    }
+
+    public ArrayList<ServerThread> getThreads(){
+        return threads;
     }
 }
