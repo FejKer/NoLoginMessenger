@@ -3,11 +3,12 @@ package ovh.fejker;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.List;
 
 public class Server {
     private int port;
     private ServerSocket ss;
-
+    private List<Client> clients;
 
     public static void main(String[] args) throws IOException {
         Server server = new Server();
@@ -21,6 +22,7 @@ public class Server {
         while (true) {
             Socket s = ss.accept();
             System.out.println("Client connected: " + s.getInetAddress() + ":" + s.getPort());
+
         }
     }
 }
