@@ -8,8 +8,10 @@ public class Client implements Serializable{
     private String clientName;
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        System.out.println("CLIENT'S STARTING");
-        Client c = new Client("localhost", 26000);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter ip address:");
+        String ip = scanner.nextLine();
+        Client c = new Client(ip, 26000);
     }
 
     private Client(String ip, int port) throws IOException {
