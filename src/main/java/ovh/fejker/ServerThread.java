@@ -11,14 +11,19 @@ public class ServerThread extends Thread{
     private BufferedReader reader;
     private PrintWriter printWriter;
     private Server server;
+    private ObjectInputStream objectInputStream;
+    private String clientName;
 
-    public ServerThread(Socket socket, InputStream input, OutputStream output, BufferedReader reader, PrintWriter printWriter, Server server){
+    public ServerThread(Socket socket, InputStream input, OutputStream output, BufferedReader reader, PrintWriter printWriter, Server server) throws IOException, ClassNotFoundException {
         this.socket = socket;
         this.input = input;
         this.output = output;
         this.reader = reader;
         this.printWriter = printWriter;
         this.server = server;
+        objectInputStream = new ObjectInputStream(socket.getInputStream());
+        Client client = (Client) objectInputStream.readObject();
+        clientName = client.getClientName();
         start();
     }
 
@@ -42,7 +47,7 @@ public class ServerThread extends Thread{
         ArrayList<ServerThread> threads = server.getThreads();
         for (ServerThread thread: threads) {
             System.out.println("LOOPING THROUGH THREADS");
-            thread.sendMessage(clientMessage);
+            thread.sendMessage(clientName + ": " + clientMessage);
         }
     }
 
