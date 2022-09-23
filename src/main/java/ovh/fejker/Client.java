@@ -7,14 +7,14 @@ import java.util.Scanner;
 public class Client implements Serializable{
     private String clientName;
 
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
+    public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter ip address:");
         String ip = scanner.nextLine();
-        Client c = new Client(ip, 26000);
+        new Client(ip, 26000);
     }
 
-    private Client(String ip, int port) throws IOException {
+    Client(String ip, int port) throws IOException {
         System.out.println("Enter client name.");
         Scanner scanner = new Scanner(System.in);
         this.clientName = "client_" + scanner.nextLine();
@@ -28,7 +28,7 @@ public class Client implements Serializable{
 
         System.out.println(socket.isConnected());
 
-        ClientThread clientThread = new ClientThread(socket, input, bufferedReader);
+        new ClientThread(socket, input, bufferedReader);
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(output);
         objectOutputStream.writeObject(this);
 

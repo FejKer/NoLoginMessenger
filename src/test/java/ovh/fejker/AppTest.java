@@ -4,6 +4,8 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
+import java.io.IOException;
+
 /**
  * Unit test for simple App.
  */
@@ -31,8 +33,8 @@ public class AppTest
     /**
      * Rigourous Test :-)
      */
-    public void testApp()
-    {
-        assertTrue( true );
+    public void testApp() throws IOException, ClassNotFoundException {
+        Server server = new Server(26000);
+        Client client = new Client("localhost", 26000);
     }
 }
